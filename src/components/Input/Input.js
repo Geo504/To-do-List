@@ -15,8 +15,8 @@ export const Input = ({onSubmit}) =>{
     
     const newTask = {
       id: uuidv4(),
-      text: inputValue,
-      completed: false
+      label: inputValue,
+      done: false
     }
     onSubmit(newTask);
     setInputValue('');

@@ -1,18 +1,23 @@
 import React from 'react'
 import { IoTrashOutline } from "react-icons/io5";
+import { CiEdit } from "react-icons/ci";
 
 import './Task.css'
 
-export const Task = ({id, text, completed, finishTask, deleteTask}) =>{
+export const Task = ({id, label, done, finishTask, deleteTask, editTask}) =>{
   return(
-    <div className={`container-task ${completed?'complete':''}`}>
+    <div className={`container-task ${done?'complete':''}`}>
 
-      <div className='icon' onClick={()=> deleteTask(id)}>  
+      <div className='iconDelete' onClick={()=> deleteTask(id)}>  
         <IoTrashOutline />
       </div>
 
       <div className='text-task' onClick={()=> finishTask(id)}>
-        {text}
+        {label}
+      </div>
+
+      <div className='iconEdit' onClick={()=> editTask(id)}>  
+        <CiEdit />
       </div>
        
     </div> 
